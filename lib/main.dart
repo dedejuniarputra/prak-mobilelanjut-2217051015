@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         ),
         body: const Center(
           child: Text(
-            'Hallo Nama Saya DEDE JUNIAR PUTRA',
+            'Hallo Nama Saya DEDE JUNIAR',
             textAlign: TextAlign.center,
             // style: TextStyle(fontSize: 16), // opsional
           ),

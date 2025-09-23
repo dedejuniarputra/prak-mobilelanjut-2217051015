@@ -1,31 +1,48 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/Screens/login_screen.dart';
+import 'package:myapp/Screens/signup_screen.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(const JustduitApp());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class JustduitApp extends StatelessWidget {
+  const JustduitApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      title: 'Justduit',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('PRAKTIKUM MOBILE LANJUT'),
-        ),
-        body: const Center(
-          child: Text(
-            'Hallo Nama Saya DEDE JUNIAR',
-            textAlign: TextAlign.center,
-            // style: TextStyle(fontSize: 16), // opsional
+        // Tema yang Anda buat sudah bagus, tidak perlu diubah
+        scaffoldBackgroundColor: const Color(0xFFF8F8FB), // abu-abu muda
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF1E88FF)),
+        inputDecorationTheme: InputDecorationTheme(
+          isDense: true,
+          filled: true,
+          fillColor: Colors.white,
+          contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+            borderSide: const BorderSide(color: Color(0xFFEDEBEB)),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+            borderSide: const BorderSide(color: Color(0xFFEDEBEB)),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+            borderSide: const BorderSide(color: Color(0xFF1E88FF)),
           ),
         ),
       ),
+      // Atur rute awal
+      initialRoute: LoginScreen.route,
+      // Definisikan semua rute aplikasi Anda di sini
+      routes: {
+        LoginScreen.route: (context) => const LoginScreen(),
+        SignupScreen.route: (context) => const SignupScreen(),
+      },
     );
   }
 }
